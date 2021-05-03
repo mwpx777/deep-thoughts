@@ -10,7 +10,7 @@ import { useQuery } from '@apollo/react-hooks';
 // destructure object to extract 'data' from useQuery hooks respones and rename it 'userData' 
 // if logged in , userData will hold all of returned info from the query
 import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
-
+import ThoughtForm from '../components/ThoughtForm';
 
 
 const Home = () => {
@@ -33,6 +33,12 @@ const Home = () => {
   return (
     <main>
       <div className='flex-row justify-space-between'>
+        {/* render ThoughtForm only if loggedIn */}
+        {loggedIn && (
+          <div className="col-12 mb-3">
+            <ThoughtForm />
+            </div>
+            )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
