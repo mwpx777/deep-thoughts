@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FriendsList = ({ friendCount, username, friends }) => {
+const FriendList = ({ friendCount, username, friends }) => {
     if (!friends || !friends.length) {
         return <p className="bg-dark text-light p-3">{username}, make some friends!</p>;
     }
@@ -22,4 +22,4 @@ const FriendsList = ({ friendCount, username, friends }) => {
     );
 };
 
-export default FriendsList;
+export default FriendList;
